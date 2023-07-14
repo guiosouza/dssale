@@ -1,48 +1,35 @@
 import Filter from './components/filter';
 import Header from './components/header';
-import SalesByDate from './components/sales-by-date';
-import './App.css';
-import SalesSummary from './components/sales-summary';
-import PieChartCard from './components/pie-chart-card';
-import SalesTable from './components/sales-table';
+import SalesSummaryByGender from './components/sales-summary-by-gender';
 import { useEffect, useMemo, useState } from 'react';
-import { FilterData, PieChartConfig, SalesByPaymentMethod, SalesByStore } from './types';
-import { buildFilterParams, makeRequest } from './utils/request';
-import { buildSalesByPaymentMethod, buildSalesByStoreChart } from './helpers';
+import { buildFilterParams, makeRequest } from './utils/resquests';
+import { buildPieChartConfig, FilterData, SalesByGender } from './types';
+import { buildSalesByGenderChart } from './helpers';
+import './App.css';
 
 function App() {
+  // "sales/by-gender?storeId=0"
   const [filterData, setFilterData] = useState<FilterData>();
-  const [salesByStore, setSalesByStore] = useState<PieChartConfig>();
-  const [salesByPaymentMethdod, setSalesByPaymentMethdod] = useState<PieChartConfig>();
+  const [salesByGender, setSalesByGender] = useState<buildPieChartConfig>();
 
   const params = useMemo(() => buildFilterParams(filterData), [filterData]);
 
   useEffect(() => {
     makeRequest
-      .get<SalesByStore[]>('/sales/by-store', { params })
+      .get<SalesByGender[]>('sales/by-gender', { params })
       .then((response) => {
-        const newSalesByStore = buildSalesByStoreChart(response.data);
-        setSalesByStore(newSalesByStore);
+        //console.log(response.data);
+        const newSalesByGender = buildSalesByGenderChart(response.data);
+        setSalesByGender(newSalesByGender);
       })
       .catch(() => {
-        console.error('Error to fetch sales by store');
+        console.error('Error to fetch sales by gender');
       });
-  }, [params]);
-
-  useEffect(() => {
-    makeRequest
-      .get<SalesByPaymentMethod[]>('/sales/by-payment-method', { params })
-      .then((response) => {
-        const newSalesByPaymentMethod = buildSalesByPaymentMethod(response.data);
-        setSalesByPaymentMethdod(newSalesByPaymentMethod);
-      })
-      .catch(() => {
-        console.error('Error to fetch sales by payment method');
-      });
-  }, [params]);
+  }, [params, filterData]);
 
   const onFilterChange = (filter: FilterData) => {
     setFilterData(filter);
+    console.log('FILTER DATA', filterData);
   };
 
   return (
@@ -50,17 +37,11 @@ function App() {
       <Header />
       <div className="app-container">
         <Filter onFilterChange={onFilterChange} />
-        <SalesByDate filterData={filterData} />
-        <div className="sales-overview-container">
-          <SalesSummary filterData={filterData} />
-          <PieChartCard name="Lojas" labels={salesByStore?.labels} series={salesByStore?.series} />
-          <PieChartCard
-            name="Pagamento"
-            labels={salesByPaymentMethdod?.labels}
-            series={salesByPaymentMethdod?.series}
-          />
-        </div>
-        <SalesTable filterData={filterData} />
+        <SalesSummaryByGender
+          name=""
+          labels={salesByGender?.labels}
+          series={salesByGender?.series}
+        />
       </div>
     </>
   );

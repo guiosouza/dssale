@@ -1,11 +1,9 @@
 import './styles.css';
 
-import React from 'react';
-
 function Header() {
   return (
-    <header className="main-header-container">
-      <h1 className="main-header-title">DS Sales</h1>
+    <header className="header-container">
+      <h2>BDS Vendas</h2>
     </header>
   );
 }
