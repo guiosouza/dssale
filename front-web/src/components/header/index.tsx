@@ -2,8 +2,8 @@ import './styles.css';
 
 function Header() {
   return (
-    <header className="header-container">
-      <h2>BDS Vendas</h2>
+    <header className="main-header-container">
+      <h1 className="main-header-title">DS Sales</h1>
     </header>
   );
 }

@@ -3,15 +3,23 @@
 }
 
 :root {
-  --primary-color: #fff;
-  --secondary-color: #D9DBE4;
-  --tertiary-color: #334AC3;
+  --primary-color: #283142;
+  --secondary-color: #1b2531;
+  --light-color: #e9e9e9;
+  --grey-light-50-color: #9aaabe;
+  --grey-light-100-color: #949494;
+  --grey-light-125-color: #72849A;
+  --grey-light-150-color: #384459;
+
+  --green-color: #08b976;
+  --white-color: #FFF;
 }
 
 body {
   margin: 0;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: var(--secondary-color);
+  color: var(--light-color);
 }
 
 h1,
@@ -22,12 +30,9 @@ h5,
 h6 {
   margin: 0;
 }
-<<<<<<< HEAD
 
 .base-card {
   background: var(--primary-color);
   border-radius: 10px;
 }
 
-=======
->>>>>>> 5aa1c83402d14efe2975e369b8ab9d808c2652f6

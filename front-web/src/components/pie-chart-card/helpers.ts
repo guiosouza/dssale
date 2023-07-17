@@ -12,37 +12,31 @@ export const buildPieChartConfig = (labels: string[] = [], name: string) => {
       style: {
         color: '#FFF',
         fontSize: '18px',
-        fontFamily: 'Ubuntu, sans-serif'
+        fontFamily: 'Roboto, sans-serif'
       }
     },
     legend: {
       show: true,
       floating: false,
       position: 'bottom',
-      offsetY: 10,
+      offsetY: 0,
       labels: {
         colors: ['#b4bed2']
       },
-      fontFamily: 'Ubuntu, sans-serif',
+      fontFamily: 'Roboto, sans-serif',
       fontSize: '18px',
       itemMargin: {
-        vertical: 7
+        vertical: 5
       }
     },
     dataLabels: {
-      enabled: true,
-      style: {
-        fontSize: '10px',
-        fontFamily: 'Ubuntu, sans-serif',
-        fontWeight: 'regular',
-        colors: ['#ffffff']
-      }
+      enabled: false
     },
     plotOptions: {
       pie: {
         size: 400,
         donut: {
-          size: '63%',
+          size: '85%',
           labels: {
             show: true,
             name: {
@@ -57,7 +51,7 @@ export const buildPieChartConfig = (labels: string[] = [], name: string) => {
               showAlways: true,
               fontSize: '24px',
               color: '#ABB1C0',
-              fontFamily: 'Ubuntu, sans-serif',
+              fontFamily: 'Roboto, sans-serif',
               formatter: function () {
                 return '';
               }
