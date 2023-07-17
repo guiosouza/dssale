@@ -1,54 +1,20 @@
 export type Gender = 'MALE' | 'FEMALE' | 'OTHER';
 
-export type SalesByDate = {
-  date: string;
-  sum: number;
+export type Store = {
+  value: number;
+  label: string;
 };
 
-export type ChartSeriesData = {
-  x: string;
-  y: number;
+export type SalesByGender = {
+  gender: string;
+  sum: number;
 };
 
 export type FilterData = {
-  dates?: Date[];
-  gender?: Gender;
+  store?: Store;
 };
 
-export type SalesSummaryData = {
-  sum?: number;
-  min: number;
-  max: number;
-  avg: number;
-  count: number;
-};
-
-export type SalesByStore = {
-  storeName: string;
-  sum: number;
-};
-
-export type SalesByPaymentMethod = {
-  description: string;
-  sum: number;
-};
-
-export type PieChartConfig = {
+export type buildPieChartConfig = {
   labels: string[];
   series: number[];
-};
-
-export type SalesResponse = {
-  content: Sale[];
-};
-
-export type Sale = {
-  id: number;
-  date: string;
-  volume: number;
-  total: number;
-  gender: Gender;
-  categoryName: string;
-  paymentMethod: string;
-  storeName: string;
 };
