@@ -15,7 +15,7 @@
   border: 1px solid var(--grey-light-150-color);
   border-radius: 10px;
   width: 250px;
-  padding: 12px 5px 12px 20px
+  padding: 12px 5px 12px 20px;
 }
 
 .filter-input:first-of-type {
@@ -23,6 +23,6 @@
 }
 
 .filter-input::placeholder {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--grey-light-50-color);
 }

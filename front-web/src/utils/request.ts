@@ -2,10 +2,10 @@ import axios from 'axios';
 import { FilterData } from '../types';
 import { formatDateToServer } from './formatters';
 
-const baseUrl = 'http://localhost:8080';
+const baseURL = 'http://localhost:8080';
 
 export const makeRequest = axios.create({
-  baseURL: baseUrl
+  baseURL
 });
 
 export const buildFilterParams = (

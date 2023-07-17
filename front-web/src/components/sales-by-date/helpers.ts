@@ -53,9 +53,9 @@ export const chartOptions = {
 } as ApexOptions;
 
 export const buildChartSeries = (salesByDate: SalesByDate[] = []) => {
-  return salesByDate.map((sale) => ({
-    x: sale.date,
-    y: sale.sum
+  return salesByDate.map(({ date, sum }) => ({
+    x: date,
+    y: sum
   }));
 };
 

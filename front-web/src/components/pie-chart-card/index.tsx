@@ -1,6 +1,6 @@
+import './styles.css';
 import ReactApexChart from 'react-apexcharts';
 import { buildPieChartConfig } from './helpers';
-import './styles.css';
 
 type Props = {
   labels?: string[];
@@ -8,7 +8,7 @@ type Props = {
   series?: number[];
 };
 
-const PieChartCard = ({ labels = [], name, series = [] }: Props) => {
+function PieChartCard({ labels = [], name, series = [] }: Props) {
   return (
     <div className="pie-chart-card base-card">
       <ReactApexChart
@@ -20,6 +20,6 @@ const PieChartCard = ({ labels = [], name, series = [] }: Props) => {
       />
     </div>
   );
-};
+}
 
 export default PieChartCard;

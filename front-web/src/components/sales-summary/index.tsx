@@ -1,12 +1,12 @@
+import './styles.css';
 import SalesSummaryCard from './sales-summary-card';
 import { ReactComponent as AvatarIcon } from '../../assets/avatar-icon.svg';
 import { ReactComponent as BarChartIcon } from '../../assets/bar-chart-icon.svg';
 import { ReactComponent as DoneIcon } from '../../assets/done-icon.svg';
 import { ReactComponent as SyncIcon } from '../../assets/sync-icon.svg';
-import './styles.css';
 import { FilterData, SalesSummaryData } from '../../types';
-import { buildFilterParams, makeRequest } from '../../utils/request';
 import { useEffect, useMemo, useState } from 'react';
+import { buildFilterParams, makeRequest } from '../../utils/request';
 
 type Props = {
   filterData?: FilterData;

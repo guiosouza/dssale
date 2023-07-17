@@ -8,10 +8,15 @@ type Props = {
   filterData?: FilterData;
 };
 
-const extraParams = { page: 0, size: 12, sort: 'date,desc' };
+const extraParams = {
+  page: 0,
+  size: 12,
+  sort: 'date,desc'
+};
 
 function SalesTable({ filterData }: Props) {
   const [sales, setSales] = useState<Sale[]>([]);
+
   const params = useMemo(() => buildFilterParams(filterData, extraParams), [filterData]);
 
   useEffect(() => {
@@ -31,6 +36,7 @@ function SalesTable({ filterData }: Props) {
       FEMALE: 'Feminino',
       OTHER: 'Outros'
     };
+
     return textByGender[gender];
   };
 

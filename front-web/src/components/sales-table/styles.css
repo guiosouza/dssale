@@ -31,10 +31,10 @@
   height: 55px;
   border-top: 1px solid var(--grey-light-125-color);
   font-size: 18px;
-  transition: background .3s
+  transition: background .3s;
 }
 
-.sales-table tbody tr:hover>td {
+.sales-table tbody tr:hover > td {
   background-color: var(--grey-light-150-color);
 }
 

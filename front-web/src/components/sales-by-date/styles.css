@@ -1,16 +1,16 @@
 .sales-by-date-container {
   height: 390px;
-  padding: 25px 15px 50px 30px
+  padding: 25px 15px 50px 30px;
 }
 
 .sales-by-date-title {
   font-size: 24px;
-  color: var(--grey-light);
+  color: var(--light-color);
   margin-bottom: 5px;
 }
 
 .sales-by-date-period {
-  color: var(--grey-light-100-color)
+  color: var(--grey-light-100-color);
 }
 
 .sales-by-date-data {
@@ -30,12 +30,11 @@
   font-size: 18px;
   display: block;
   margin-bottom: 10px;
-  color: var()
 }
 
 .sales-by-date-quantity-description {
   font-size: 18px;
-  color: var(--grey-light-100-color)
+  color: var(--grey-light-100-color);
 }
 
 .sales-by-date-chart {

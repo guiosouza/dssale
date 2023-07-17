@@ -7,7 +7,7 @@ type Props = {
   icon: React.ReactNode;
 };
 
-function SalesSummaryCard({ icon, value, label }: Props) {
+function SalesSummaryCard({ value, label, icon }: Props) {
   return (
     <div className="sales-summary-card base-card">
       {icon}

@@ -1,12 +1,14 @@
+import './styles.css';
 import ReactApexChart from 'react-apexcharts';
-import { buildChartSeries, chartOptions, sumSalesByDate } from './helper';
+import { buildChartSeries, chartOptions, sumSalesByDate } from './helpers';
 import { useEffect, useMemo, useState } from 'react';
 import { buildFilterParams, makeRequest } from '../../utils/request';
 import { ChartSeriesData, FilterData, SalesByDate } from '../../types';
 import { formatDate, formatPrice } from '../../utils/formatters';
-import './styles.css';
 
-type Props = { filterData?: FilterData };
+type Props = {
+  filterData?: FilterData;
+};
 
 function SalesByDateComponent({ filterData }: Props) {
   const [chartSeries, setChartSeries] = useState<ChartSeriesData[]>([]);
@@ -31,7 +33,7 @@ function SalesByDateComponent({ filterData }: Props) {
   return (
     <div className="sales-by-date-container base-card">
       <div>
-        <h4 className="sales-by-date-title">Evolução de vendas</h4>
+        <h4 className="sales-by-date-title">Evolução das vendas</h4>
         {filterData?.dates && (
           <span className="sales-by-date-period">
             {formatDate(filterData?.dates?.[0])} até {formatDate(filterData?.dates?.[1])}
@@ -41,7 +43,7 @@ function SalesByDateComponent({ filterData }: Props) {
       <div className="sales-by-date-data">
         <div className="sales-by-date-quantity-container">
           <h2 className="sales-by-date-quantity">{formatPrice(totalSum)}</h2>
-          <span className="sales-by-date-quantity-label">Vendas do período</span>
+          <span className="sales-by-date-quantity-label">Vendas no período</span>
           <span className="sales-by-date-quantity-description">
             O gráfico mostra as vendas em todas as lojas
           </span>
